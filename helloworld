@@ -16,7 +16,7 @@ needs: helloworld
 steps:
 - run: echo "Step 1 completed"
 - run: echo "Step 2 completed"
-  helloworld-3:
+helloworld-3:
 runs-on: ubuntu-latest
 needs: [helloworld, helloworld-2]
 steps:
