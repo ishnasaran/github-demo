@@ -18,15 +18,14 @@ steps:
 - run: echo "Step 2 completed"
 helloworld-3:
 runs-on: ubuntu-latest
-needs: [helloworld, helloworld-2]
+needs:
+ - job: helloworld
+        optional: true
+ - job: helloworld-2
+        optional: true
 steps:
-- run: echo "Step 1 completed"
-- run: echo "Step 2 completed"
 - run: ech "Step 3 completed"
 helloworld-4:
 needs: helloworld
   steps:
-- run: echo "Step 1 completed"
-- run: echo "Step 2 completed"
-- run: ech "Step 3 completed"
 - run: ech "Step 4 completed"
